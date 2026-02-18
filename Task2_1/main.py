@@ -7,6 +7,13 @@ class Feedback(BaseModel):
     message: str
 
 app = FastAPI()
+
+external_date = {
+    "name" : "Dima",
+    "message" : "Bla Bla Bla",
+}
+
+feedback = Feedback(**external_date)
 @app.post("/feedback")
 async def feedback(feedback: Feedback):
     feedback_message.append ({
